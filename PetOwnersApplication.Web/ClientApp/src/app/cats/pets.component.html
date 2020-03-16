@@ -1,0 +1,14 @@
+<h1>Cats</h1>
+
+<p *ngIf="!petsModel"><em>Loading...</em></p>
+
+<div *ngFor="let model of petsModel | keyvalue">
+  <div *ngFor="let mo of model.value | keyvalue">
+    <p><b>{{mo.key.toString()}}</b></p>
+    <ul *ngFor="let cat of mo.value">
+      <li>{{cat}}
+      </li>
+    </ul>
+  </div>
+</div>
+
